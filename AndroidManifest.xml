@@ -26,6 +26,10 @@
             android:name="com.mgoenka.animationplay.SecondActivity"
             android:label="@string/title_activity_second" >
         </activity>
+        <activity
+            android:name="com.mgoenka.animationplay.OnSwipeTouchListener"
+            android:label="@string/title_activity_on_swipe_touch_listener" >
+        </activity>
     </application>
 
 </manifest>

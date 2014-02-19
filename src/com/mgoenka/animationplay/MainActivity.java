@@ -5,13 +5,46 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	Button btnAnimate;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		btnAnimate = (Button) findViewById(R.id.btnAnimate);
+		TextView tvTrackPad = (TextView) findViewById(R.id.tvTrackPad);
+		
+		tvTrackPad.setOnTouchListener(new OnSwipeTouchListener(this) {
+		  @Override
+		  public void onSwipeDown() {
+		      Toast.makeText(MainActivity.this, "Down", Toast.LENGTH_SHORT).show();
+		      btnAnimate.animate().yBy(100);
+		  }
+		  
+		  @Override
+		  public void onSwipeLeft() {
+		      Toast.makeText(MainActivity.this, "Left", Toast.LENGTH_SHORT).show();
+		      btnAnimate.animate().xBy(-100);
+		  }
+		  
+		  @Override
+		  public void onSwipeUp() {
+		      Toast.makeText(MainActivity.this, "Up", Toast.LENGTH_SHORT).show();
+		      btnAnimate.animate().yBy(-100);
+		  }
+		  
+		  @Override
+		  public void onSwipeRight() {
+		      Toast.makeText(MainActivity.this, "Right", Toast.LENGTH_SHORT).show();
+		      btnAnimate.animate().xBy(100);
+		  }
+		});
 	}
 
 	@Override

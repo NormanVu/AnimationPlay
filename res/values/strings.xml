@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="animate">Animate</string>
     <string name="title_activity_second">Second Activity</string>
+    <string name="title_activity_on_swipe_touch_listener">OnSwipeTouchListener</string>
 
 </resources>
